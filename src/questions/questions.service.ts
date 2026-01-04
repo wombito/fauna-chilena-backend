@@ -46,7 +46,7 @@ export class QuestionsService {
   findOne(id: number) {
     //return `This action returns a #${id} question`;
     //return this.riddles[id-1];
-    const riddle = this.riddles[id];
+    const riddle = this.riddles[id-1];
     if (!riddle) {
       throw new NotFoundException(`Riddle with id ${id} not found`);
     }
