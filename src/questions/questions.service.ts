@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateQuestionDto } from './dto/create-question.dto';
 import { UpdateQuestionDto } from './dto/update-question.dto';
 
@@ -45,7 +45,12 @@ export class QuestionsService {
 
   findOne(id: number) {
     //return `This action returns a #${id} question`;
-    return this.riddles[id-1];
+    //return this.riddles[id-1];
+    const riddle = this.riddles[id];
+    if (!riddle) {
+      throw new NotFoundException(`Riddle with id ${id} not found`);
+    }
+    return riddle;
   }
 
   update(id: number, updateQuestionDto: UpdateQuestionDto) {
