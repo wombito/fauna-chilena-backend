@@ -4,6 +4,36 @@ import { UpdateQuestionDto } from './dto/update-question.dto';
 
 @Injectable()
 export class QuestionsService {
+
+  private riddles = [
+    {
+      "id": 1,
+      "riddle": "Soy el ciervo más pequeño del mundo y habito en el sur de Chile. ¿Qué animal soy?",
+      "answer": "pudu"
+    },
+    {
+      "id": 2,
+      "riddle": "Vivo en el mar de Chile, tengo bigotes y me gusta tomar sol en las rocas. ¿Qué animal soy?",
+      "answer": "lobo marino"
+    },
+    {
+      "id": 3,
+      "riddle": "Soy un ave chilena de color negro con una mancha roja en el pecho y mi canto anuncia la lluvia. ¿Qué animal soy?",
+      "answer": "loica"
+    },
+    {
+      "id": 4,
+      "riddle": "Soy un animal que corre muy rápido, no puedo volar y vivo en el sur de Chile. ¿Qué animal soy?",
+      "answer": "ñandu"
+    },
+    {
+      "id": 5,
+      "riddle": "Vivo en los bosques de Chile, tengo una cola muy peluda y me alimento de frutos y pequeños animales. ¿Qué animal soy?",
+      "answer": "zorro"
+    }
+  ]
+
+
   create(createQuestionDto: CreateQuestionDto) {
     return 'This action adds a new question';
   }
