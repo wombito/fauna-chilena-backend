@@ -44,7 +44,8 @@ export class QuestionsService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} question`;
+    //return `This action returns a #${id} question`;
+    return this.riddles[id-1];
   }
 
   update(id: number, updateQuestionDto: UpdateQuestionDto) {
