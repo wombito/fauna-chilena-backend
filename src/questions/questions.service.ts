@@ -39,7 +39,8 @@ export class QuestionsService {
   }
 
   findAll() {
-    return `This action returns all questions`;
+    //return `This action returns all questions`;
+    return this.riddles;
   }
 
   findOne(id: number) {
