@@ -44,10 +44,14 @@ export class QuestionsService {
   }
 
   findOne(id: number) {
-    //return `This action returns a #${id} question`;
     //return this.riddles[id-1];
-    const riddle = this.riddles[id-1];
+    /*const riddle = this.riddles[id-1];
     if (!riddle) {
+      throw new NotFoundException(`Riddle with id ${id} not found`);
+    }
+    return riddle;*/
+    const riddle = this.riddles.find(riddle => riddle.id === id); // If not found, riddle is undefined
+    if (!riddle) { // Check for undefined
       throw new NotFoundException(`Riddle with id ${id} not found`);
     }
     return riddle;
@@ -58,6 +62,11 @@ export class QuestionsService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} question`;
-  }
+    const index = this.riddles.findIndex(r => r.id === id);
+    if (index === -1) {
+      throw new NotFoundException(`Riddle with id ${id} not found`);
+    }
+    this.riddles.splice(index, 1);
+    return { message: `Riddle with id ${id} removed successfully` };
+    }
 }
