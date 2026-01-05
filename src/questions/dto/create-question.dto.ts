@@ -1,1 +1,4 @@
-export class CreateQuestionDto {}
+export class CreateQuestionDto {
+    riddle: string;
+    answer: string;
+}

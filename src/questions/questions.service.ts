@@ -35,7 +35,13 @@ export class QuestionsService {
 
 
   create(createQuestionDto: CreateQuestionDto) {
-    return 'This action adds a new question';
+    const newRiddle = {
+      id: this.riddles.length + 1,
+      riddle: createQuestionDto.riddle,
+      answer: createQuestionDto.answer,
+    };
+    this.riddles.push(newRiddle);
+    return newRiddle;
   }
 
   findAll() {
