@@ -64,7 +64,16 @@ export class QuestionsService {
   }
 
   update(id: number, updateQuestionDto: UpdateQuestionDto) {
-    return `This action updates a #${id} question`;
+    // currentRiddle is a reference to the object, when currentRiddle is modified, this.riddles is modified too
+    const currentRiddle = this.findOne(id) // If not exists returns NotFoundException
+    // if riddle or answer properties are modified (!== undefined) they are updated
+    if (updateQuestionDto.riddle !== undefined) {
+      currentRiddle.riddle = updateQuestionDto.riddle;
+    }
+    if(updateQuestionDto.answer !== undefined) {
+      currentRiddle.answer = updateQuestionDto.answer;
+    }
+    return currentRiddle;
   }
 
   remove(id: number) {
