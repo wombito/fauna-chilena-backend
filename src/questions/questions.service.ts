@@ -35,8 +35,19 @@ export class QuestionsService {
 
 
   create(createQuestionDto: CreateQuestionDto) {
+
+    let maxId = 0;
+
+    if (this.riddles.length > 0) {
+      for (const riddle of this.riddles) {
+        if (riddle.id > maxId) {
+          maxId = riddle.id;
+        }
+      }
+    }
+
     const newRiddle = {
-      id: this.riddles.length + 1,
+      id: maxId + 1,
       riddle: createQuestionDto.riddle,
       answer: createQuestionDto.answer,
     };
