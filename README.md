@@ -21,6 +21,12 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+
+## About the project
+I'm learning NestJS, and this is my first NestJS project, which I'm developing as I learn. It consists of a backend for an app aimed at teaching Chilean fauna to children.
+
+
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
